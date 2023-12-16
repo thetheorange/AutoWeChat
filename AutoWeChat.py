@@ -81,6 +81,7 @@ class AutoWeChat(QWidget):
                 self.__interval = read_config().get("interval")
                 self.auto_send_t = AutoSend(name=user_name, loop_flag=self.__loop_flag,
                                             interval=self.__interval, text_box=self.__text_box)
+                self.auto_send_t.daemon = True
                 self.auto_send_t.start()
                 self.set_w.setWindowTitle("Sending...")
             else:
