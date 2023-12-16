@@ -76,9 +76,9 @@ class AutoWeChat(QWidget):
             user_name = str(user_name)
             if user_name != "" and len(self.__text_box) > 0:
                 # 消息列表
-                self.__text_box = self.__config.get("text_box")
+                self.__text_box = read_config().get("text_box")
                 # 循环间隔
-                self.__interval = self.__config.get("interval")
+                self.__interval = read_config().get("interval")
                 self.auto_send_t = AutoSend(name=user_name, loop_flag=self.__loop_flag,
                                             interval=self.__interval, text_box=self.__text_box)
                 self.auto_send_t.start()
