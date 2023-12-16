@@ -99,14 +99,3 @@ class AutoCore:
     # 关闭项目
     def stop(self):
         self.start_flag = False
-
-
-# 测试代码
-if __name__ == "__main__":
-    app = AutoCore()
-    app.user_name = "刘子千"
-    app.text_box.append("测试")
-    app.loop_flag = True
-    app.start()
-    time.sleep(2)
-    app.stop()
