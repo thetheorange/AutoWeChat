@@ -109,8 +109,6 @@ class AutoWeChat(QWidget):
     # 加入/删除消息文本
     def __add_msg(self):
         try:
-            # 更新text_box
-            self.__text_box = self.__config.get("text_box")
             # 获取消息文本输入控件
             text_input = self.set_w.findChild(QLineEdit, "msgEdit").text()
             text_input = str(text_input)
@@ -133,4 +131,4 @@ class AutoWeChat(QWidget):
     def __clear_msg(self):
         self.__text_box = []
         modify_config(key="text_box", value=self.__text_box)
-        self.set_w.show_msg.setPlainText("")
+        self.set_w.show_msg.setPlainText(str(self.__text_box))
